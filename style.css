@@ -1,0 +1,29 @@
+.wrap {
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    padding: 30px;
+    border: 3px solid rgb(129, 103, 103);
+    border-radius: 10px;
+}
+
+.btn {
+    min-width: 150px;
+    min-height: 80px;
+    margin: 48px;
+    font-size: 16px;
+    background-color: rgb(171, 210, 196);
+    border-color:  rgb(171, 210, 196);
+    border-radius: 10px;
+}
+
+.btn-res {
+    display: block;
+    min-width: 200px;
+    min-height: 100px;
+    margin: auto;
+    font-size: 20px;
+    background-color: rgb(114, 157, 141);
+    border-color: rgb(114, 157, 141);
+    border-radius: 10px;
+}
