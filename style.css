@@ -15,9 +15,15 @@
     background-color: rgb(171, 210, 196);
     border-color:  rgb(171, 210, 196);
     border-radius: 10px;
+    filter: drop-shadow(1px 1px 10px rgba(78, 55, 55, 0.2));
 }
 
-.btn-res {
+    .btn:hover {
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+}
+
+    .btn-res {
     display: block;
     min-width: 200px;
     min-height: 100px;
