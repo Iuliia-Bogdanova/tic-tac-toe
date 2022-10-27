@@ -24,9 +24,8 @@ function calcDiv() {
     let b = +prompt(`Second number`);
     
         if (b == 0) {
-            
             alert('You can not divide by 0');
+        } else {
+            alert(`Result ${a / b}`);
         }
-
-    alert(`Result ${a / b}`);
 }
