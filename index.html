@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic Tac Toe</title>
+    <title>Tic-Tac-Toe</title>
     <link rel="stylesheet" href="./styles/normalize.css">
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
 
-    <header class="header">
+    <!-- <header class="header">
         <div class="container">
             <div class="nav-row">
                 <div class="logo">
                     <img src="./assets/icons/logo-light.svg" alt="Logo">
-                    <p class="logo__title">tic tac toe</p>
+                    <p class="logo__title">tic-tac-toe</p>
                 </div>
                 
                 <button class="dark-mode-btn">
@@ -23,18 +23,92 @@
                 </button>
             </div>
         </div>
-    </header>
-
-
+    </header> -->
     
-    <footer class="footer">
+    <main class="page">
+
+        <div class="container">
+            
+            <h1 class="title">let's play tic-tac-toe</h1>
+            <h2 class="sub-title">who wants to start the game?</h2>
+            
+            <div class="gamePlayers">
+                
+                <div class="player">
+                    <h3 class="player-item">first player</h3>
+                    <input type="text" class="player-name" placeholder="write your name">
+                    <button class="startBtn" type="button">start</button>
+                </div>
+
+                <div class="player">
+                    <h3 class="player-item">second player</h3>
+                    <input type="text" class="player-name" placeholder="write your name">
+                    <button class="startBtn" type="button">start</button>
+                </div>
+            </div>
+            
+            <div class="gameBoard">
+                <div class="cell">X</div>
+                <div class="cell">X</div>
+                <div class="cell">X</div>
+                <div class="cell">X</div>
+                <div class="cell">X</div>
+                <div class="cell">X</div>
+                <div class="cell">X</div>
+                <div class="cell">X</div>
+                <div class="cell">X</div>
+            </div>   
+            
+            <h2 class="sub-title">score</h2>
+            
+            <div class="scoreBoard">
+                
+                <div class="scoreBoardFirst">
+                    <h3 class="player">first player</h3>
+                    <div class="countsDisplay">
+                        <span class="count">1</span>
+                    </div>
+                </div>
+
+                <div class="separator">
+                        <p>:</p>
+                </div>
+                
+                <div class="scoreBoardSecond">
+                    <h3 class="player">second player</h3>
+                    <div class="countsDisplay">
+                    <span class="count">1</span>
+                    </div>
+                </div>
+        
+            </div>
+
+            <div class="congrat">
+                    <span class="count">
+                        <p class="congratItem">congratulations! 
+                            <span class="winner"> won!</span>
+                        </p>
+                    </span>
+                </div>
+
+            <div class="buttons">
+                <button class="restartBtn" style="--clr:#bcabac90">continue</button>
+                <button class="pauseBtn" style="--clr:#d55b6b80">pause</button>
+                <button class="resetBtn" style="--clr:#A7B1AF95">stop</button>
+            </div>
+
+        </div>
+        
+    </main>
+    
+    <!-- <footer class="footer">
         <div class="container">
             <div class="copyright">
                 <p>© Iuliia Bogdanova, 2023</p>
             </div>
         </div>
-    </footer>
+    </footer> -->
     
-    <script type="module" src="./scripts/index.mjs"></script>
+    <script type="module" src="./scripts/index.js"></script>
 </body>
 </html>
