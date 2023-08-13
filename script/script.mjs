@@ -1,19 +1,12 @@
-// Получаем элементы разметки
 const player1Input = document.querySelector(".player1 .player-name");
 const player1StartBtn = document.querySelector(".player1 .startBtn");
-
 const player2Input = document.querySelector(".player2 .player-name");
 const player2StartBtn = document.querySelector(".player2 .startBtn");
-
 const buttons = document.querySelectorAll(".buttons");
-
 const text = document.querySelector(".subTitle");
-
 const gameCells = document.querySelectorAll(".cell");
-
 const restartBtn = document.querySelector(".restartBtn");
 
-// переменные
 let currentPlayer = "X";
 let nextPlayer = "0";
 let playerTurn = currentPlayer;
@@ -21,12 +14,12 @@ let winnerName = "";
 
 // обновляем содержимое subTitle
 const updateTitle = (msg) => {
-  text.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 1000 }); // анимация появления
-    text.textContent = msg;
-  text.classList.add("animate"); // добавляем класс с анимацией
+    text.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 1000 }); 
+        text.textContent = msg;
+    text.classList.add("animate"); 
 };
 
-// функция, проверяющая заполненность полей ввода
+// проверяем заполненность полей ввода
 const checkInputs = () => {
     if (!player1Input.value || !player2Input.value) {
         updateTitle('enter names for both players');
@@ -35,7 +28,7 @@ const checkInputs = () => {
     return true;
 };
 
-// обработчик события для кнопки "start" 1 игрока
+// слушаем события для кнопки "start" 1 игрока
 player1StartBtn.addEventListener("click", function () {
     const player1Name = player1Input.value.toUpperCase();
     const player2Name = player2Input.value.toUpperCase();
@@ -50,7 +43,7 @@ player1StartBtn.addEventListener("click", function () {
     }
 });
 
-// Обработчик события для кнопки "start" 2 игрока
+// слушаем события для кнопки "start" 2 игрока
 player2StartBtn.addEventListener("click", function () {
     const player1Name = player1Input.value.toUpperCase();
     const player2Name = player2Input.value.toUpperCase();
@@ -65,7 +58,7 @@ player2StartBtn.addEventListener("click", function () {
     }
 });
 
-// обработчик события клика на каждую кнопку
+// слушаем события клика на каждую кнопку
 buttons.forEach(function (button) {
     button.addEventListener("click", function () {
         // удаляем класс 'active' у всех кнопок
@@ -73,20 +66,20 @@ buttons.forEach(function (button) {
         btn.classList.remove("active");
         btn.classList.add("inactive");
         });
-
         // добавляем класс 'active' к нажатой кнопке
         button.classList.add("active");
         button.classList.remove("inactive");
     });
 });
 
-// начало игры
+// начинаем игру
 const startGame = () => {
     gameCells.forEach((cell) => {
         cell.addEventListener("click", handleClick);
     });
 };
-// обработка клика
+
+// обрабатываем клики
 const handleClick = (e) => {
     if (player1Input.value && player2Input.value) {
         if (e.target.textContent === "") {
@@ -109,12 +102,12 @@ const handleClick = (e) => {
     }
 }
 
-// переключение между игроками
+// переключаемся между игроками
 const changePlayerTurn = () => {
     playerTurn = playerTurn === currentPlayer ? nextPlayer : currentPlayer;
 };
 
-// check win
+// проверяем победителя
 const checkWin = () => {
     const winningConditions = [
         [0, 1, 2],
@@ -152,7 +145,7 @@ const checkDraw = () => {
     return emptyCellsCount === 0 && !checkWin();
 }
 
-// disable cells
+// отключаем ячейки поля
 const disableCells = () => {
     gameCells.forEach(cell => {
         cell.removeEventListener('click', handleClick);
@@ -160,7 +153,7 @@ const disableCells = () => {
     })
 }
 
-// функция, сбрасывающая игру
+// сбрасываем игру
 const resetGame = () => {
   // очищаем игровое поле
     gameCells.forEach((cell) => {
@@ -179,8 +172,8 @@ const resetGame = () => {
     });
 }
 
-// обработчик события для кнопки "restart"
+// слушаем события для кнопки "restart"
 restartBtn.addEventListener("click", resetGame);
 
-// calling start game function
+// вызываем функцию начала игры
 startGame();
