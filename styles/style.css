@@ -182,6 +182,11 @@ html, body {
     border-bottom: none;
 }
 
+.cell.disabled {
+    background-color: var(--bg-light);
+    opacity: 0;
+}
+
 .congrat {
     display: flex;
     flex-wrap: wrap;
@@ -198,6 +203,8 @@ html, body {
 
 .restartBtn {
 }
+
+
 
 .footer {
     display: flex;
