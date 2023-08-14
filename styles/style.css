@@ -1,3 +1,6 @@
+/* font-family: 'TTCommons-Regular';
+font-family: 'Indie Flower', cursive; */
+
 @font-face {
     font-family: 'TTCommons-Regular';
     src: url(../assets/fonts/tt-commons-regular.woff2) format('woff2');
@@ -21,8 +24,8 @@
     --bg-dark: #d4856d;
     --bg-light-dark: #384957;
     --text-color-dark: #8ea6ad;
-    --font-accent: 'Indie Flower', cursive;
-    --font-main: 'TTCommons-Regular', cursive;
+    --font-accent: 'Indie Flower';
+    --font-main: 'TTCommons-Regular';
 }
 
 *, 
