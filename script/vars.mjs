@@ -24,5 +24,5 @@ export {
     currentPlayer,
     nextPlayer,
     playerTurn,
-    winnerName,
+    winnerName
 };
