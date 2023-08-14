@@ -24,7 +24,7 @@ font-family: 'Indie Flower', cursive; */
     --bg-dark: #d4856d;
     --bg-light-dark: #384957;
     --text-color-dark: #8ea6ad;
-    --font-accent: 'Indie Flower';
+    --font-accent: 'Indie Flower', cursive;
     --font-main: 'TTCommons-Regular';
 }
 
