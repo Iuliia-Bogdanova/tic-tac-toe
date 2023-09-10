@@ -1,20 +1,11 @@
-// import { player1Input } from "./vars.mjs";
-// import { player1StartBtn } from "./vars.mjs";
-// import { player2Input } from "./vars.mjs";
-// import { player2StartBtn } from "./vars.mjs";
-// import { buttons } from "./vars.mjs";
-// import { text } from "./vars.mjs";
-// import { gameCells } from "./vars.mjs";
-// import { restartBtn } from "./vars.mjs";
-
-const player1Input = document.querySelector(".player1 .player-name");
-const player1StartBtn = document.querySelector(".player1 .startBtn");
-const player2Input = document.querySelector(".player2 .player-name");
-const player2StartBtn = document.querySelector(".player2 .startBtn");
-const buttons = document.querySelectorAll(".buttons");
-const text = document.querySelector(".subTitle");
-const gameCells = document.querySelectorAll(".cell");
-const restartBtn = document.querySelector(".restartBtn");
+import { player1Input } from "./vars.mjs";
+import { player1StartBtn } from "./vars.mjs";
+import { player2Input } from "./vars.mjs";
+import { player2StartBtn } from "./vars.mjs";
+import { buttons } from "./vars.mjs";
+import { text } from "./vars.mjs";
+import { gameCells } from "./vars.mjs";
+import { restartBtn } from "./vars.mjs";
   
 let currentPlayer = "X";
 let nextPlayer = "0";
