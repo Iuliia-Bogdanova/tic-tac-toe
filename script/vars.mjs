@@ -7,11 +7,6 @@ const text = document.querySelector(".subTitle");
 const gameCells = document.querySelectorAll(".cell");
 const restartBtn = document.querySelector(".restartBtn");
 
-let currentPlayer = "X";
-let nextPlayer = "0";
-let playerTurn = currentPlayer;
-let winnerName = "";
-
 export {
     player1Input,
     player1StartBtn,
@@ -20,9 +15,5 @@ export {
     buttons,
     text,
     gameCells,
-    restartBtn,
-    currentPlayer,
-    nextPlayer,
-    playerTurn,
-    winnerName
+    restartBtn
 };

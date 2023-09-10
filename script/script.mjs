@@ -1,21 +1,26 @@
-import { player1Input } from "./vars.mjs";
-import { player1StartBtn } from "./vars.mjs";
-import { player2Input } from "./vars.mjs";
-import { player2StartBtn } from "./vars.mjs";
-import { buttons } from "./vars.mjs";
-import { text } from "./vars.mjs";
-import { gameCells } from "./vars.mjs";
-import { restartBtn } from "./vars.mjs";
+// import { player1Input } from "./vars.mjs";
+// import { player1StartBtn } from "./vars.mjs";
+// import { player2Input } from "./vars.mjs";
+// import { player2StartBtn } from "./vars.mjs";
+// import { buttons } from "./vars.mjs";
+// import { text } from "./vars.mjs";
+// import { gameCells } from "./vars.mjs";
+// import { restartBtn } from "./vars.mjs";
 
+const player1Input = document.querySelector(".player1 .player-name");
+const player1StartBtn = document.querySelector(".player1 .startBtn");
+const player2Input = document.querySelector(".player2 .player-name");
+const player2StartBtn = document.querySelector(".player2 .startBtn");
+const buttons = document.querySelectorAll(".buttons");
+const text = document.querySelector(".subTitle");
+const gameCells = document.querySelectorAll(".cell");
+const restartBtn = document.querySelector(".restartBtn");
+  
 let currentPlayer = "X";
 let nextPlayer = "0";
 let playerTurn = currentPlayer;
 let winnerName = "";
-
-// import { currentPlayer } from "./vars.mjs";
-// import { nextPlayer } from "./vars.mjs";
-// import { playerTurn } from "./vars.mjs";
-// import { winnerName } from "./vars.mjs";
+const winningConditions = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
 
 // обновляем содержимое subTitle
 const updateTitle = (msg) => {
@@ -24,8 +29,16 @@ const updateTitle = (msg) => {
   text.classList.add("animate");
 };
 
+// записываем значения полей ввода в формате toUpperCase
+document.querySelectorAll(".player-name").forEach(function (player) {
+    player.addEventListener("input", function () {
+        this.value = this.value.toUpperCase();
+    });
+});
+
 // проверяем заполненность полей ввода
 const checkInputs = () => {
+  
   if (!player1Input.value || !player2Input.value) {
     updateTitle("enter names for both players");
     return false;
@@ -84,19 +97,25 @@ const startGame = () => {
   });
 };
 
+// обновляем содержимое ячейки - вместо e.target.textContent = playerTurn;
+const updateCellContent = (cell) => {
+  cell.textContent = playerTurn;
+};
+
 // обрабатываем клики
 const handleClick = (e) => {
   if (player1Input.value && player2Input.value) {
     if (e.target.textContent === "") {
-      e.target.textContent = playerTurn;
+      // e.target.textContent = playerTurn;
+      updateCellContent(e.target);
 
       if (checkWin()) {
-        const winnerName =
+        winnerName =
           playerTurn === "X" ? player1Input.value : player2Input.value;
         updateTitle(`${winnerName} is a winner!`);
         disableCells();
       } else if (checkDraw()) {
-        updateTitle(`drawn game!`);
+        updateTitle('drawn game!');
         disableCells();
       } else {
         changePlayerTurn();
@@ -114,16 +133,6 @@ const changePlayerTurn = () => {
 
 // проверяем победителя
 const checkWin = () => {
-  const winningConditions = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6],
-  ];
   for (let i = 0; i < winningConditions.length; i++) {
     const [pos1, pos2, pos3] = winningConditions[i];
 
@@ -169,7 +178,7 @@ const resetGame = () => {
     cell.addEventListener("click", handleClick);
   });
   // обновляем содержимое subTitle
-  updateTitle("");
+  updateTitle("press the start button");
   // удаляем класс 'active' у всех кнопок
   buttons.forEach(function (btn) {
     btn.classList.remove("active");
